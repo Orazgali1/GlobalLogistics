@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автопарк | GlobalLogistics</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e3a8a',
+            accent: '#10b981',
+            dark: '#1f2937',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="text-gray-800 font-sans">
+
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="text-2xl font-bold text-primary">GlobalLogistics</a>
+  
+      <!-- Бургер -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer">
+      <label for="menu-toggle" class="md:hidden text-3xl text-primary cursor-pointer">&#9776;</label>
+  
+      <!-- Навигация -->
+      <nav class="hidden md:flex space-x-6 text-base text-textbase peer-checked:flex md:peer-checked:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none py-4 md:py-0 px-6 md:px-0 z-40">
+        <a href="index.html" class="hover:text-accent">Главная</a>
+        <a href="about.html" class="hover:text-accent">О компании</a>
+        <a href="autopark.html" class="hover:text-accent">Автопарк</a>
+        <a href="contact.html" class="hover:text-accent">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+<section class="py-20
+  
+
+<!-- Фильтры -->
+<section class="py-8 bg-gray-50">
+  <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto" data-aos="fade-down">
+    <button class="filter-btn px-5 py-2 rounded-full bg-primary text-white hover:bg-accent transition" data-filter="all">Все</button>
+    <button class="filter-btn px-5 py-2 rounded-full bg-white border border-primary text-primary hover:bg-primary hover:text-white transition" data-filter="light">Легковые</button>
+    <button class="filter-btn px-5 py-2 rounded-full bg-white border border-primary text-primary hover:bg-primary hover:text-white transition" data-filter="cargo">Грузовые</button>
+    <button class="filter-btn px-5 py-2 rounded-full bg-white border border-primary text-primary hover:bg-primary hover:text-white transition" data-filter="special">Спецтехника</button>
+  </div>
+</section>
+
+<!-- Автопарк -->
+<section id="autopark" class="py-16 px-6 max-w-7xl mx-auto">
+  <h1 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Наш автопарк</h1>
+  <div id="vehicles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+ <!-- Мини-фургон -->
+<div class="vehicle bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:scale-105" data-category="special" data-aos="zoom-in">
+  <div class="overflow-hidden rounded-lg w-full h-48 mb-4">
+    <img src="images/фургончик.png" alt="Мини-фургон" class="w-full h-full object-contain transition-transform duration-500 hover:scale-110">
+  </div>
+  
+  <h3 class="text-xl font-semibold mb-2 text-dark">Мини-фургон (каблук)</h3>
+  
+  <p class="text-gray-500 text-center text-sm mb-4">
+    Перевозка малых грузов до 0.5 т в городе.
+  </p>
+  
+  <ul class="text-sm text-gray-600 text-left mb-4 w-full">
+    <li><b>Длина:</b> 1.7 м</li>
+    <li><b>Ширина:</b> 1 м</li>
+    <li><b>Высота:</b> 1 м</li>
+    <li><b>Объём:</b> 1.7 м³</li>
+    <li><b>Грузоподъемность:</b> 500 кг</li>
+  </ul>
+
+  <!-- ДОБАВЛЕНО: Цена -->
+  <p class="text-sm bg-primary text-white font-semibold px-3 py-1 rounded-full mb-4">
+    от 5000₸
+  </p>
+  <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" class="mt-auto bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300">
+    Заказать
+  </button>      
+</div>
+
+    
+    <!-- Газель тент -->
+    <div class="vehicle bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:scale-105" data-category="cargo" data-aos="zoom-in">
+      <div class="overflow-hidden rounded-lg w-full h-48 mb-4">
+        <img src="images/Рефрижерато .png" alt="Газель тент" class="w-full h-full object-contain transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-dark">Газель тент</h3>
+      <p class="text-gray-500 text-center text-sm mb-4">Универсальный транспорт для переездов и доставки до 1.5 т.</p>
+      <ul class="text-sm text-gray-600 text-left mb-4 w-full">
+        <li><b>Длина:</b> 3 м</li>
+        <li><b>Ширина:</b> 2 м</li>
+        <li><b>Высота:</b> 1.7 м</li>
+        <li><b>Объём:</b> 9 м³</li>
+        <li><b>Грузоподъемность:</b> 1.5 т</li>
+      </ul>
+      <p class="text-sm bg-primary text-white font-semibold px-3 py-1 rounded-full mb-4">
+        от 6000₸
+      </p>      
+      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" class="mt-auto bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300">
+        Заказать
+      </button>      
+    </div>
+
+    <!-- Автокран -->
+    <div class="vehicle bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:scale-105" data-category="special" data-aos="zoom-in">
+      <div class="overflow-hidden rounded-lg w-full h-48 mb-4">
+        <img src="images/Автокран .png" alt="Автокран" class="w-full h-full object-contain transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-dark">Автокран</h3>
+      <p class="text-gray-500 text-center text-sm mb-4">Подъём и транспортировка тяжёлых грузов на строительных площадках.</p>
+      <ul class="text-sm text-gray-600 text-left mb-4 w-full">
+        <li><b>Грузоподъемность:</b> до 20 тонн</li>
+        <li><b>Длина стрелы:</b> до 28 м</li>
+        <li><b>Ширина:</b> 2.5 м</li>
+      </ul>
+      <p class="text-sm bg-primary text-white font-semibold px-3 py-1 rounded-full mb-4">
+        от 10000₸
+      </p>
+      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" class="mt-auto bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300">
+        Заказать
+      </button>      
+    </div>
+
+    <!-- Газель бортовая открытая -->
+    <div class="vehicle bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:scale-105" data-category="cargo" data-aos="zoom-in">
+      <div class="overflow-hidden rounded-lg w-full h-48 mb-4">
+        <img src="images/газель .png" alt="Газель бортовая открытая" class="w-full h-full object-contain transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-dark">Газель бортовая открытая</h3>
+      <p class="text-gray-500 text-center text-sm mb-4">Перевозка длинномерных грузов, стройматериалов и крупногабаритных изделий.</p>
+      <ul class="text-sm text-gray-600 text-left mb-4 w-full">
+        <li><b>Длина:</b> 4 м</li>
+        <li><b>Ширина:</b> 2 м</li>
+        <li><b>Высота борта:</b> 0.5 м</li>
+        <li><b>Объём:</b> 16 м³</li>
+        <li><b>Грузоподъемность:</b> 1.5 т</li>
+      </ul>
+      <p class="text-sm bg-primary text-white font-semibold px-3 py-1 rounded-full mb-4">
+        от 5000 ₸
+      </p>      
+      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" class="mt-auto bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300">
+        Заказать
+      </button>      
+    </div>
+
+    <!-- Рефрижератор -->
+    <div class="vehicle bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:scale-105" data-category="special" data-aos="zoom-in">
+      <div class="overflow-hidden rounded-lg w-full h-48 mb-4">
+        <img src="images/рф.png" alt="Рефрижератор" class="w-full h-full object-contain transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-dark">Рефрижератор</h3>
+      <p class="text-gray-500 text-center text-sm mb-4">Перевозка скоропортящихся продуктов с температурным режимом.</p>
+      <ul class="text-sm text-gray-600 text-left mb-4 w-full">
+        <li><b>Длина:</b> 3 м</li>
+        <li><b>Ширина:</b> 2 м</li>
+        <li><b>Высота:</b> 2 м</li>
+        <li><b>Объём:</b> 12 м³</li>
+        <li><b>Грузоподъемность:</b> 1.5 т</li>
+      </ul>
+      <p class="text-sm bg-primary text-white font-semibold px-3 py-1 rounded-full mb-4">
+        от 7000₸
+      </p>      
+      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" class="mt-auto bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300">
+        Заказать
+      </button>      
+    </div>
+
+    <!-- Грузопассажирская Газель -->
+    <div class="vehicle bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:scale-105" data-category="cargo" data-aos="zoom-in">
+      <div class="overflow-hidden rounded-lg w-full h-48 mb-4">
+        <img src="images/грузоперевозки .png" alt="Грузопассажирская Газель" class="w-full h-full object-contain transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-dark">Грузопассажирская Газель</h3>
+      <p class="text-gray-500 text-center text-sm mb-4">Перевозка груза и 5 пассажиров одновременно.</p>
+      <ul class="text-sm text-gray-600 text-left mb-4 w-full">
+        <li><b>Длина:</b> 3 м</li>
+        <li><b>Ширина:</b> 2 м</li>
+        <li><b>Высота:</b> 1.8 м</li>
+        <li><b>Объём груза:</b> 9 м³</li>
+        <li><b>Грузоподъемность:</b> 1.2 т</li>
+      </ul>
+      <p class="text-sm bg-primary text-white font-semibold px-3 py-1 rounded-full mb-4">
+        от 6500₸
+      </p>      
+      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" class="mt-auto bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300">
+        Заказать
+      </button>      
+    </div>
+
+    <!-- Автовышка -->
+    <div class="vehicle bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-xl p-6 flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:scale-105" data-category="special" data-aos="zoom-in">
+      <div class="overflow-hidden rounded-lg w-full h-48 mb-4">
+        <img src="images/машина.png" alt="Автовышка" class="w-full h-full object-contain transition-transform duration-500 hover:scale-110">
+      </div>
+      <h3 class="text-xl font-semibold mb-2 text-dark">Автовышка</h3>
+      <p class="text-gray-500 text-center text-sm mb-4">Работы на высоте до 18 м: монтаж, фасады, электросети.</p>
+      <ul class="text-sm text-gray-600 text-left mb-4 w-full">
+        <li><b>Рабочая высота:</b> до 18 м</li>
+        <li><b>Грузоподъемность люльки:</b> 200 кг</li>
+        <li><b>Длина машины:</b> 6 м</li>
+      </ul>
+      <p class="text-sm bg-primary text-white font-semibold px-3 py-1 rounded-full mb-4">
+        от 9000₸
+      </p>      
+      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" class="mt-auto bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300">
+        Заказать
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section id="order" class="py-16 px-6 max-w-4xl mx-auto text-center">
+  <h2 class="text-3xl font-bold mb-8 text-primary" data-aos="fade-up">Как оформить заказ</h2>
+  
+  <ol class="list-decimal list-inside text-left text-gray-700 space-y-4" data-aos="fade-up" data-aos-delay="100">
+    <li>Выберите нужный транспорт из автопарка.</li>
+    <li>Нажмите кнопку "Заказать" на карточке транспорта.</li>
+    <li>Перейдите на страницу "Контакты" и заполните форму заявки или позвоните нам.</li>
+    <li>Получите быструю и безопасную доставку вашего груза!</li>
+  </ol>
+
+  <p class="mt-8 text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="200">
+    💬 <b>Стоимость перевозки</b> зависит от веса груза, объема и расстояния доставки.<br>
+    Окончательная цена уточняется при оформлении заказа.
+  </p>
+
+  <!-- Кнопка перехода на страницу Контактов -->
+  <div class="mt-10" data-aos="fade-up" data-aos-delay="300">
+    <a href="contact.html" class="inline-block bg-primary text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-accent transition-all duration-300">
+      Оставить заявку
+    </a>
+  </div>
+</section>
+
+
+<!-- Новый улучшенный футер -->
+<footer class="bg-gray-900 text-white pt-16 pb-8 px-6 relative overflow-hidden" id="footer" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+
+    <!-- Блок: Контакты -->
+    <div>
+      <h3 class="text-2xl font-bold mb-4 text-accent">GlobalLogistics</h3>
+      <p class="text-sm mb-2">Телефон: +7 (777) 123-45-67</p>
+      <p class="text-sm mb-2">Email: info@globallogistics.com</p>
+      <p class="text-xs text-gray-400 mt-4">* Все данные являются вымышленными.<br>Проект создан в учебных целях.<br>Автор: Оразгали Нургалиев.</p>
+    </div>
+
+    <!-- Блок: Навигация -->
+    <div>
+      <h3 class="text-2xl font-bold mb-4 text-accent">Навигация</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="hover:text-accent transition">Главная</a></li>
+        <li><a href="autopark.html" class="hover:text-accent transition">Автопарк</a></li>
+        <li><a href="#contact" class="hover:text-accent transition">Контакты</a></li>
+      </ul>
+    </div>
+
+    <!-- Блок: Форма обратной связи -->
+    <div>
+      <h3 class="text-2xl font-bold mb-4 text-accent">Обратная связь</h3>
+      <form class="flex flex-col gap-3">
+        <input type="text" placeholder="Ваше имя" class="p-2 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-accent">
+        <input type="email" placeholder="Ваш email" class="p-2 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-accent">
+        <textarea placeholder="Сообщение" rows="2" class="p-2 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+        <button type="submit" class="bg-primary hover:bg-accent py-2 rounded-lg transition-all duration-300">Отправить</button>
+      </form>
+    </div>
+
+    <!-- Блок: Соцсети с иконками -->
+<div>
+  <h3 class="text-2xl font-bold mb-4 text-accent">Мы в соцсетях</h3>
+  <div class="flex gap-4 items-center">
+    <a href="#" class="hover:text-accent transition flex items-center gap-2">
+      <!-- Иконка Instagram -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+      </svg>
+      Instagram
+    </a>
+
+    <a href="#" class="hover:text-accent transition flex items-center gap-2">
+      <!-- Иконка Telegram -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM17.707 8.293l-2.625 8.625a1 1 0 01-1.541.558l-2.349-1.734-1.088 1.088a1 1 0 01-1.414-1.414l1.088-1.088-1.734-2.349a1 1 0 01.558-1.541l8.625-2.625a1 1 0 011.48 1.48z"/>
+      </svg>
+      Telegram
+    </a>
+
+    <a href="#" class="hover:text-accent transition flex items-center gap-2">
+      <!-- Иконка VK -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15C2 20.3 2.7 21 3.5 21h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zm-3.1 12.3c-.3.4-1.3.9-2.7.9h-1.5V15c0-1.1 0-2.3-1.2-2.3-.8 0-1.3.7-1.5 1.4v1.8H8.6c-2.1 0-3.5-1.4-3.5-3.9 0-1.7.8-2.6 2-2.6 1 0 1.5.7 1.6 1.3h.1c.2-.5.6-1.2 1.7-1.2 1.6 0 2.4 1.1 2.4 3v1.8c0 .4.1.5.5.5.3 0 .6-.1.7-.2l.1-.1.7 1.2z"/>
+      </svg>
+      VK
+    </a>
+  </div>
+</div>
+
+  <!-- Линия разделения -->
+  <div class="h-px bg-gray-700 my-8"></div>
+
+  <!-- Копирайт -->
+  <div class="text-center text-xs text-gray-400">
+    &copy; 2025 GlobalLogistics. Все права защищены.
+  </div>
+</footer>
+
+<!-- Кнопка наверх -->
+<div id="to-top" title="Наверх" class="fixed bottom-5 right-5 bg-primary text-white w-12 h-12 flex items-center justify-center rounded-full opacity-0 visibility-hidden transition z-50">↑</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Плавное появление кнопки наверх
+    const toTop = document.getElementById("to-top");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        toTop.classList.add("show");
+      } else {
+        toTop.classList.remove("show");
+      }
+    });
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Инициализация AOS
+    AOS.init();
+
+    // Закрытие меню после клика по ссылке
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        const checkbox = document.getElementById("menu-toggle");
+        if (checkbox.checked) checkbox.checked = false;
+      });
+    });
+  });
+</script>
+
+
+  
+</body>
+</html>

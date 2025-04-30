@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobalLogistics | Грузоперевозки по всему миру</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e3a8a',
+            accent: '#10b981',
+            textbase: '#374151',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    #to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #1e3a8a;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      z-index: 999;
+    }
+    #to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body class="text-textbase font-sans">
+
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="text-2xl font-bold text-primary">GlobalLogistics</a>
+  
+      <!-- Бургер -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer">
+      <label for="menu-toggle" class="md:hidden text-3xl text-primary cursor-pointer">&#9776;</label>
+  
+      <!-- Навигация -->
+      <nav class="hidden md:flex space-x-6 text-base text-textbase peer-checked:flex md:peer-checked:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none py-4 md:py-0 px-6 md:px-0 z-40">
+        <a href="index.html" class="hover:text-accent">Главная</a>
+        <a href="about.html" class="hover:text-accent">О компании</a>
+        <a href="autopark.html" class="hover:text-accent">Автопарк</a>
+        <a href="contact.html" class="hover:text-accent">Контакты</a>
+      </nav>
+    </div>
+  </header>
+  
+
+<section class="relative flex flex-col items-center justify-center text-center py-32 px-4 bg-cover bg-center bg-no-repeat" style="background-image: url('images/Фура.png'); background-attachment: fixed;">
+  <div class="absolute inset-0 bg-black/30"></div>
+  <div class="relative bg-white/70 backdrop-blur-md p-10 rounded-lg shadow-lg max-w-3xl animate-fade-up">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary">Надежные грузоперевозки по всему миру</h1>
+    <p class="max-w-2xl mb-8 text-textbase">GlobalLogistics — ваш партнёр в безопасной и быстрой доставке товаров в любую точку планеты.</p>
+    <a href="#contact" class="bg-primary text-white py-3 px-6 rounded-md hover:bg-accent transition">Оставить заявку</a>
+  </div>
+</section>
+
+<section id="about" class="py-16 px-6 max-w-5xl mx-auto text-center bg-white" data-aos="fade-up">
+  <h2 class="text-3xl font-bold mb-6">О компании</h2>
+  <p class="text-lg leading-relaxed">GlobalLogistics — это надёжный партнёр в мире международной логистики. Более 15 лет мы помогаем бизнесу и частным клиентам доставлять грузы в Россию, страны СНГ, Европу, Ближний Восток и Азию.</p>
+</section>
+
+<section id="services" class="py-16 bg-gray-50 px-6" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">Наши услуги</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Карточка с флип эффектом 1 -->
+      <div class="perspective group">
+        <div class="flip-card">
+          <div class="flip-card-inner group-hover:rotate-y-180">
+            <div class="flip-card-front flex flex-col items-center justify-center p-6 shadow-md rounded">
+              <img src="https://img.icons8.com/ios-filled/100/10b981/in-transit.png" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-semibold mb-4">Международные перевозки</h3>
+            </div>
+            <div class="flip-card-back flex flex-col items-center justify-center p-6">
+              <p>Доставка товаров по всему миру в кратчайшие сроки.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка с флип эффектом 2 -->
+      <div class="perspective group">
+        <div class="flip-card">
+          <div class="flip-card-inner group-hover:rotate-y-180">
+            <div class="flip-card-front flex flex-col items-center justify-center p-6 shadow-md rounded">
+              <img src="https://img.icons8.com/ios-filled/100/10b981/warehouse.png" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-semibold mb-4">Складские услуги</h3>
+            </div>
+            <div class="flip-card-back flex flex-col items-center justify-center p-6">
+              <p>Надежное хранение ваших товаров на современных складах с охраной.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка с флип эффектом 3 -->
+      <div class="perspective group">
+        <div class="flip-card">
+          <div class="flip-card-inner group-hover:rotate-y-180">
+            <div class="flip-card-front flex flex-col items-center justify-center p-6 shadow-md rounded">
+              <img src="https://img.icons8.com/ios-filled/100/10b981/documents.png" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-semibold mb-4">Таможенное оформление</h3>
+            </div>
+            <div class="flip-card-back flex flex-col items-center justify-center p-6">
+              <p>Полное сопровождение грузов через таможню без лишних проблем.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="advantages" class="py-16 px-6 max-w-5xl mx-auto bg-white" data-aos="fade-up">
+  <h2 class="text-3xl font-bold mb-10 text-center">Наши преимущества</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <div class="flex flex-col items-center">
+      <img src="https://img.icons8.com/ios-filled/100/10b981/security-checked.png" class="w-16 h-16 mb-4">
+      <h3 class="text-xl font-semibold mb-2">Безопасность</h3>
+      <p>Все перевозки застрахованы. Строгий контроль за каждым этапом доставки.</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://img.icons8.com/ios-filled/100/10b981/clock.png" class="w-16 h-16 mb-4">
+      <h3 class="text-xl font-semibold mb-2">Соблюдение сроков</h3>
+      <p>99% наших доставок выполняются точно в срок. Работаем без выходных и праздников.</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <img src="https://img.icons8.com/ios-filled/100/10b981/headset.png" class="w-16 h-16 mb-4">
+      <h3 class="text-xl font-semibold mb-2">Поддержка 24/7</h3>
+      <p>Круглосуточная поддержка клиентов на всех этапах доставки.</p>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="py-16 bg-gray-50 px-6" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">Отзывы клиентов</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transform transition">
+        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
+        <p class="italic text-gray-600 mb-4">"Очень доволен работой компании! Быстро, качественно и без нервов. Буду обращаться ещё."</p>
+        <h3 class="font-semibold text-primary">Евгений Воронов</h3>
+        <span class="text-sm text-gray-400">28.03.2024</span>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transform transition">
+        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
+        <p class="italic text-gray-600 mb-4">"Выбирали между несколькими компаниями. Выбрали GlobalLogistics и ни разу не пожалели!"</p>
+        <h3 class="font-semibold text-primary">Марианна</h3>
+        <span class="text-sm text-gray-400">02.04.2024</span>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transform transition">
+        <div class="text-yellow-400 text-xl mb-2">★★★★★</div>
+        <p class="italic text-gray-600 mb-4">"Перевозили мебель. Всё аккуратно, вежливо и вовремя. Отличная компания!"</p>
+        <h3 class="font-semibold text-primary">Алексей Смирнов</h3>
+        <span class="text-sm text-gray-400">11.04.2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-16 px-6 max-w-4xl mx-auto bg-gray-50" data-aos="fade-up">
+  <h2 class="text-3xl font-bold mb-6 text-center">Контакты</h2>
+  <form class="flex flex-col gap-4">
+    <input type="text" placeholder="Ваше имя" class="p-3 border rounded">
+    <input type="tel" placeholder="Ваш телефон" class="p-3 border rounded">
+    <textarea placeholder="Ваше сообщение" rows="4" class="p-3 border rounded"></textarea>
+    <button type="submit" class="bg-primary text-white py-3 px-6 rounded hover:bg-accent transition">Отправить заявку</button>
+  </form>
+  <div class="text-center mt-8 text-sm text-gray-500">
+    Телефон: +7 (777) 123-45-67 | Email: info@globallogistics.com
+  </div>
+</section>
+
+
+<!-- Новый улучшенный футер -->
+<footer class="bg-gray-900 text-white pt-16 pb-8 px-6 relative overflow-hidden" id="footer" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+
+    <!-- Блок: Контакты -->
+    <div>
+      <h3 class="text-2xl font-bold mb-4 text-accent">GlobalLogistics</h3>
+      <p class="text-sm mb-2">Телефон: +7 (777) 123-45-67</p>
+      <p class="text-sm mb-2">Email: info@globallogistics.com</p>
+      <p class="text-xs text-gray-400 mt-4">* Все данные являются вымышленными.<br>Проект создан в учебных целях.<br>Автор: Оразгали Нургалиев.</p>
+    </div>
+
+    <!-- Блок: Навигация -->
+    <div>
+      <h3 class="text-2xl font-bold mb-4 text-accent">Навигация</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="hover:text-accent transition">Главная</a></li>
+        <li><a href="autopark.html" class="hover:text-accent transition">Автопарк</a></li>
+        <li><a href="#contact" class="hover:text-accent transition">Контакты</a></li>
+      </ul>
+    </div>
+
+    <!-- Блок: Форма обратной связи -->
+    <div>
+      <h3 class="text-2xl font-bold mb-4 text-accent">Обратная связь</h3>
+      <form class="flex flex-col gap-3">
+        <input type="text" placeholder="Ваше имя" class="p-2 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-accent">
+        <input type="email" placeholder="Ваш email" class="p-2 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-accent">
+        <textarea placeholder="Сообщение" rows="2" class="p-2 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+        <button type="submit" class="bg-primary hover:bg-accent py-2 rounded-lg transition-all duration-300">Отправить</button>
+      </form>
+    </div>
+
+    <!-- Блок: Соцсети с иконками -->
+<div>
+  <h3 class="text-2xl font-bold mb-4 text-accent">Мы в соцсетях</h3>
+  <div class="flex gap-4 items-center">
+    <a href="#" class="hover:text-accent transition flex items-center gap-2">
+      <!-- Иконка Instagram -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+      </svg>
+      Instagram
+    </a>
+
+    <a href="#" class="hover:text-accent transition flex items-center gap-2">
+      <!-- Иконка Telegram -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM17.707 8.293l-2.625 8.625a1 1 0 01-1.541.558l-2.349-1.734-1.088 1.088a1 1 0 01-1.414-1.414l1.088-1.088-1.734-2.349a1 1 0 01.558-1.541l8.625-2.625a1 1 0 011.48 1.48z"/>
+      </svg>
+      Telegram
+    </a>
+
+    <a href="#" class="hover:text-accent transition flex items-center gap-2">
+      <!-- Иконка VK -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15C2 20.3 2.7 21 3.5 21h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zm-3.1 12.3c-.3.4-1.3.9-2.7.9h-1.5V15c0-1.1 0-2.3-1.2-2.3-.8 0-1.3.7-1.5 1.4v1.8H8.6c-2.1 0-3.5-1.4-3.5-3.9 0-1.7.8-2.6 2-2.6 1 0 1.5.7 1.6 1.3h.1c.2-.5.6-1.2 1.7-1.2 1.6 0 2.4 1.1 2.4 3v1.8c0 .4.1.5.5.5.3 0 .6-.1.7-.2l.1-.1.7 1.2z"/>
+      </svg>
+      VK
+    </a>
+  </div>
+</div>
+
+  <!-- Линия разделения -->
+  <div class="h-px bg-gray-700 my-8"></div>
+
+  <!-- Копирайт -->
+  <div class="text-center text-xs text-gray-400">
+    &copy; 2025 GlobalLogistics. Все права защищены.
+  </div>
+</footer>
+
+<!-- Кнопка "Наверх" -->
+<div id="to-top" title="Наверх">↑</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Плавное появление кнопки наверх
+    const toTop = document.getElementById("to-top");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        toTop.classList.add("show");
+      } else {
+        toTop.classList.remove("show");
+      }
+    });
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Инициализация AOS
+    AOS.init();
+
+    // Закрытие меню после клика по ссылке
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        const checkbox = document.getElementById("menu-toggle");
+        if (checkbox.checked) checkbox.checked = false;
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
